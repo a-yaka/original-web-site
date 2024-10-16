@@ -1,0 +1,90 @@
+header{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fas{
+    margin-left: 7px;
+    margin-bottom: 5px;
+}
+
+#menu{
+    height: 30%;
+    width: 78%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 100px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 9px 0px 5px;
+}
+
+ul{
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+}
+
+#title{
+    font-family:  'Press Start 2P', cursive;
+    font-size: 30px;
+    /*↓ 文字透過、ふちどり白にしたいけど一旦white */
+    color: white;
+    /* color: transparent;
+    text-shadow: 1px 1px 0 white,
+                 -1px -1px 0 white,
+                1px 1px 0 white,
+                -1px -1px 0 white;  */
+    writing-mode: vertical-rl;
+    line-height: 130%;
+    z-index: 99;
+    position: absolute;
+    margin-top:10px;
+}
+
+.slideshow-zoom{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    padding: 0;
+    li{
+        list-style: none;
+        width: 100%;
+        height: 300px;
+        animation: zooming 5s forwards;
+        img{
+            width: 100%;
+        }
+        @keyframes zooming{
+            0%{
+                z-index: 1;
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1.2);
+                opacity: 1;
+                z-index: 10;
+            }
+        }
+
+    }
+}
+
+
+/* ↓id仮でつけた */
+#photo{
+    width: 200px;
+    height: 150px;
+}
+/* ↓ボードゲームとはの中を横並びにしたい */
+.about_boadgame{
+    display: flex;
+    flex-direction: row;
+}
+
