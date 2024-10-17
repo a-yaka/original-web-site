@@ -20,3 +20,13 @@ document.addEventListener("DOMContentLoaded", function(){
         }, 8000);
     }, 4000);
 });
+
+
+// section5
+const scrollContainer = document.querySelector(".scroll_movies");
+
+  scrollContainer.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        scrollContainer.scrollleft += event.deltaY; // スクロール位置を調整
+  });
+

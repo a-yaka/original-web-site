@@ -1,4 +1,6 @@
+/* header */
 header{
+    background-color: whitesmoke;
     height: 70px;
     display: flex;
     align-items: center;
@@ -30,6 +32,11 @@ header a{
     text-decoration: none;
 }
 
+/* main */
+/* section1 */
+body{
+    background-image: url("../img/background.jpg");
+}
 #title{
     font-family:  'Press Start 2P', cursive;
     font-size: 30px;
@@ -51,12 +58,12 @@ header a{
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 300px;
+    height: 650px;
     padding: 0;
     li{
         list-style: none;
         width: 100%;
-        height: 300px;
+        height: 650px;
         animation: zooming 5s forwards;
         img{
             width: 100%;
@@ -76,15 +83,93 @@ header a{
     }
 }
 
+/* 全section */
+.frame{
+    /* ↓一旦見やすいように緑 */
+    /* 色決めたら各idつけて色指定する */
+    background-color: white;
+    /* opacity: 0.7; 　これで透過できるけどここに指定したら全部薄くなる*/
+    border-radius: 25px;
+    width: 95%;
+    margin: 10px;
+    padding-bottom: 10px;
+}
 
+.subtitle{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family:  'Press Start 2P', cursive;
+}
+
+.description{
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+/* section2 */
 /* ↓id仮でつけた */
-#photo{
+
+#sec2_photo, #sec3_photo{
     width: 200px;
     height: 150px;
 }
-/* ↓ボードゲームとはの中を横並びにしたい */
-.about_boadgame{
+/* ↓ボードゲームとはの中を横並びにしたい?? */
+.sec2_container{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
+.description{
+    flex: 1;
+}
+/* section3 */
+.sec3_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#link_lists{
+    display: flex;
+    justify-content: end;
+}
+
+/* section4 */
+.event_items{
+    border-top: solid 1px black;
+    margin-top: 7px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+.date{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.event_name, .event_place, .event_link{
+    font-size: 20px;
+}
+
+
+
+/* section5 */
+.scroll_movies{
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: relative;
+}
+
+.scroll_content{
+    display: inline-block;
+}
+
+.scroll_content iframe{
+    margin-right: 50px;
+}
+
+
+
+/* section6 */
