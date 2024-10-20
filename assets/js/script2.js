@@ -1,128 +1,192 @@
-// function toggleVisibility(id){
-//     const options = ["player_options", "time_options", "level_options"];
-//     options.forEach(option => {
-//         const element = document.getElementById(option);
-//         if(option === id) {
-//             if(element.classList.contains("show")){
-//                 element.classList.remove("show");
-//                 element.classList.add("hidden");
-//             } else {
-//                 element.classList.add("show");
-//                 element.classList.remove("hiden");
-//             }
-//         } else {
-//             element.classList.remove("show");
-//             element.classList.add("hidden"); 
-//         }
-//     })
-// }
-
-
 const games = [
     {
         name:"宝石の煌めき:Splendor",
         players:[2,3,4],
         timeCategory:"中量級(30～60分)",
         level:"ふつう★★☆",
-        image:"",
+        image:"../assets/img/宝石の煌めき.jpg",
     },
     {
         name:"カタン",
         players:[3,4],
         timeCategory:"重量級(60分～)",
         level:"ふつう★★☆",
-        image:"",
+        image:"../assets/img/カタン.jpg",
     },
     {
         name:"おばけキャッチ",
         players:[2,3,4,5,6,7],
         timeCategory:"軽量級(～30分)",
         level:"かんたん★☆☆",
-        image:"",
-    },
-    {
-        name:"ドメモ",
-        players:[2,3,4,5],
-        timeCategory:"軽量級(～30分)",
-        level:"かんたん★☆☆",
-        image:"",
+        image:"../assets/img/おばけキャッチ.jpg",
     },
     {
         name:"プロジェクトL",
         players:[1,2,3,4],
         timeCategory:"中量級(30～60分)",
         level:"ふつう★★☆",
-        image:"",
-    },
-    {
-        name:"ニムト",
-        players:[2,3,4,5,6,7,8,9,10],
-        timeCategory:"中量級(30～60分)",
-        level:"かんたん★☆☆",
-        image:"", 
+        image:"../assets/img/プロジェクトL.jpg",
     },
     {
         name:"クアドロカラー",
         players:[2,3,4,5],
         timeCategory:"軽量級(～30分)",
         level:"かんたん★☆☆",
-        image:"",   
-    },
-    {
-        name:"ブロックス",
-        players:[2,3,4],
-        timeCategory:"中量級(30～60分)",
-        level:"かんたん★☆☆",
-        image:"", 
-    },
-    {
-        name:"ごきぶりポーカー",
-        players:[2,3,4,5,6],
-        timeCategory:"軽量級(～30分)",
-        level:"かんたん★☆☆",
-        image:"", 
+        image:"../assets/img/クアドロカラー.jpg",   
     },
     {
         name:"はぁって言うゲーム",
         players:[3,4,5,6,7,8],
         timeCategory:"軽量級(～30分)",
         level:"かんたん★☆☆",
-        image:"", 
+        image:"../assets/img/はぁって言うゲーム.jpg", 
     },
     {
-        name:"カタカナーシ",
+        name:"カタカナーシ2",
         players:[3,4,5,6,7,8],
         timeCategory:"軽量級(～30分)",
         level:"かんたん★☆☆",
-        image:"", 
+        image:"../assets/img/カタカナーシ2.jpg", 
     },
     {
-        name:"イチゴリラ",
-        players:[2,3,4,5,6],
-        timeCategory:"軽量級(～30分)",
-        level:"かんたん★☆☆",
-        image:"", 
-    },
-    {
-        name:"ノイ",
+        name:"ノイ(neu)",
         players:[2,3,4,5,6,7],
         timeCategory:"軽量級(～30分)",
         level:"かんたん★☆☆",
-        image:"", 
+        image:"../assets/img/ノイ.jpg", 
     },
     {
         name:"ウイングスパン",
         players:[1,2,3,4,5],
         timeCategory:"重量級(60分～)",
         level:"むずかしい★★★",
-        image:"", 
+        image:"../assets/img/ウイングスパン.jpg", 
     },
     {
         name:"キャンバス",
         players:[1,2,3,4,5],
         timeCategory:"中量級(30～60分)",
         level:"ふつう★★☆",
-        image:"", 
+        image:"../assets/img/キャンバス.jpg", 
+    },
+    {
+        name:"音速飯店",
+        players:[2,3,4,5,6],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/音速飯店.jpg",
+    },
+    {
+        name:"エバーデール",
+        players:[1,2,3,4],
+        timeCategory:"中量級(30~60分)",
+        level:"ふつう★★☆",
+        image:"../assets/img/エバーデール.jpg",
+    },
+    {
+        name:"スティックスタック",
+        players:[2,3,4,5,6,7,8],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/スティックスタック.jpg", 
+    },
+    {
+        name:"バトルライン",
+        players:[2],
+        timeCategory:"中量級(30～60分)",
+        level:"ふつう★★☆",
+        image:"../assets/img/バトルライン.jpg", 
+    },
+    {
+        name:"コードネーム",
+        players:[2,3,4,5,6,7,8],
+        timeCategory:"中量級(30～60分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/コードネーム.jpg", 
+    },
+    {
+        name:"クラッシュアイスゲーム",
+        players:[1,2,3,4],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/クラッシュアイスゲーム.jpg", 
+    },
+    {
+        name:"ジャングルスピード",
+        players:[2,3,4,5,6,7,8,9,10,11],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/ジャングルスピード.jpg", 
+    },
+    {
+        name:"ニゴイチ",
+        players:[3,4,5,6],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/ニゴイチ.jpg", 
+    },
+    {
+        name:"ピガサス",
+        players:[2,3,4,5,6,7,8],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/ピガサス.jpg", 
+    },
+    {
+        name:"ファストラック",
+        players:[2],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/ファストラック.jpg", 
+    },
+    {
+        name:"Otrio(オートリオ)",
+        players:[2,3,4],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/オートリオ.jpg", 
+    },
+    {
+        name:"スピードカップス",
+        players:[2,3,4],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/スピードカップス.jpg", 
+    },
+    {
+        name:"アウトブレイク",
+        players:[2],
+        timeCategory:"軽量級(～30分)",
+        level:"ふつう★★☆",
+        image:"../assets/img/アウトブレイク.jpg", 
+    },
+    {
+        name:"おばけキャッチ名人技",
+        players:[2,3,4,5,6,7,8],
+        timeCategory:"中量級(30～60分)",
+        level:"ふつう★★☆",
+        image:"../assets/img/名人技.jpg", 
+    },
+    {
+        name:"アルナックの失われし遺跡",
+        players:[1,2,3,4],
+        timeCategory:"重量級(60分～)",
+        level:"ふつう★★☆",
+        image:"../assets/img/アルナック.jpg", 
+    },
+    {
+        name:"ナインタイル",
+        players:[2,3,4],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/ナインタイル.jpg", 
+    },
+    {
+        name:"ナンジャモンジャ・ミドリ",
+        players:[2,3,4,5,6],
+        timeCategory:"軽量級(～30分)",
+        level:"かんたん★☆☆",
+        image:"../assets/img/ナンジャモンジャミドリ.jpg", 
     }
 ];
 
@@ -204,51 +268,3 @@ const renderGames = (filterdGames) => {
         gameCards.appendChild(card);
     });
 };
-
-
-
-
-
-
-// const gameCards = document.getElementById("gameCards");
-
-// const renderGames = (filterdGames) => {
-//     gameCards.innerHTML = ""; //既存のカードをクリア
-//     filterdGames.forEach((game) => {
-//         const card = document.createElement("div");
-//         card.classList.add("col-md-4","mb-4"); //Bootstrapのカラムとマージンを追加
-//         card.innerHTML = `
-//         <div class="card">
-//             <h5 class="card-title">${game.name}</h5>
-//             <img src="${game.image}" class="card-img" alt="${game.name}"/>
-//             <div class="card-body">
-//                 <p class="card-text">人数:${game.players}人用<br>
-//                  所要時間:${game.time}<br>難易度:${game.level}</p>
-//             </div>
-//         </div>
-//         `;
-//         gameCards.appendChild(card);
-//     });
-// };
-
-
-
-// // const filterGames = (playerCount) => {
-// //     const filterdGames = games.filter((game) => {
-// //         if(playerCount === "all")return true;//全て表示
-// //         return game.players === playerCount;
-// //     });
-// //     renderGames(filterdGames);
-// // };
-
-// // //ボタンのイベントリスナー設定
-// // const filterButtons = document.querySelectorAll(".btn");
-// // filterButtons.forEach((button) => {
-// //     button.addEventListener("click",() => {
-// //     const players = button.getAttribute("data-players");
-// //     filterGames(players === "all" ? "all":parseInt(players));
-// //     });
-// // });
-
-// //初期表示
-// renderGames(games);

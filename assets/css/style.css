@@ -143,7 +143,7 @@ body{
     flex: 1;
     height: 180px;
     /* 画像変更の必要あり！ */
-    background-image: url(../img/slide.jpg);
+    background-image: url(../img/list.jpg);
     background-size: 100%;
 }
 .link_lists{
@@ -162,7 +162,7 @@ body{
     flex: 1;
     height: 180px;
     /* 画像変更の必要あり！ */
-    background-image: url(../img/sample3.jpg);
+    background-image: url(../img/cafe.jpg);
     background-size: 100%;
 }
 
@@ -203,4 +203,14 @@ body{
 
 .scroll_content iframe{
     margin-right: 50px;
+}
+
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
