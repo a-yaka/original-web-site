@@ -33,35 +33,47 @@ header a{
 }
 
 /* main */
+@font-face{
+    font-family: gamefont;
+    src: url(../font/PixelMplus-20130602/PixelMplus10-Regular.ttf);
+    font-display: swap;
+}
+body{
+    /* background-image: url("../img/background.jpg"); */
+    font-family: gamefont;
+}
 /* section1 */
 h1{
     font-family:  'Press Start 2P', cursive;
     font-size: 25px;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 h2{
     font-size: 18px;
     display: flex;
     justify-content: center;
+    margin-bottom: 5px;
 }
 
 /* section2 */
 #sec2{
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .container{
-    width: 90%;
     height: 450px;
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .shopname{
     font-size: 25px;
-    padding-top: 10px;
+    padding-top: 20px;
+    text-decoration: underline;
 }
 #address{
     padding-top: 3px;
@@ -75,5 +87,12 @@ img{
     padding-top: 10px;
 }
 #description{
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+#container1{
+    background-color: aquamarine;
+}
+#container2{
+    background-color: lightcoral;
 }

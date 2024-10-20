@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     slides[activeIndex].style.display = "block";
 
     setInterval(function(){
-        slides[activeIndex].style.transition = "opacity 4s";
+        slides[activeIndex].style.transition = "opacity 2s";
         slides[activeIndex].style.opacity = 0;
 
         const nextIndex = (activeIndex + 1) % slides.length;
@@ -17,12 +17,13 @@ document.addEventListener("DOMContentLoaded", function(){
             slides[nextIndex].style.display = "block";
             slides[nextIndex].style.opacity = 1;
             activeIndex = nextIndex;
-        }, 4000);
+        }, 2000);
     }, 2000);
 });
 
+//section5
 
-// section5
+//section6
 const scrollContainer = document.querySelector(".scroll_movies");
 
   scrollContainer.addEventListener('wheel', (event) => {

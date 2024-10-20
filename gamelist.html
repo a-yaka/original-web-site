@@ -6,6 +6,7 @@
     <title>Document</title>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style2.css">
     <link rel="icon" href="data:;base64,=">
@@ -38,55 +39,22 @@
             <h2>あなたにぴったりの</h2>
             <h2>ボドゲを見つけよう！</h2>
         </section>
-        <section class="section" id="sec2">
+        <section class="section" id="mt-4">
             <div class="btns">
-                <button onclick="toggleVisibility('player_options')" class="btn" id="btn1">人数でさがす</button>
-                <button onclick="toggleVisibility('time_options')"class="btn" id="btn2">プレイ時間でさがす</button>
-                <button onclick="toggleVisibility('level_options')"class="btn" id="btn3">難易度でさがす</button>
-               </div>
-            
+                <button class="btn" onclick="showOptions('player')">人数で<br>さがす</button>
+                <button class="btn" onclick="showOptions('time')">プレイ時間<br>でさがす</button>
+                <button class="btn" onclick="showOptions('level')">難易度で<br>さがす</button>
+            </div>
         </section>
         <section class="section" id="sec3">
-            <div class="hidden" id="player_options">
-                <label><input type="radio" name="players" value="1" onclick="filterGamesByPlayers()">1人用</label>
-                <label><input type="radio" name="players" value="2" onclick="filterGamesByPlayers()">2人用</label>
-                <label><input type="radio" name="players" value="3" onclick="filterGamesByPlayers()">3人用</label>
-                <label><input type="radio" name="players" value="4" onclick="filterGamesByPlayers()">4人用</label>
-                <label><input type="radio" name="players" value="5" onclick="filterGamesByPlayers()">5人用</label>
-                <label><input type="radio" name="players" value="all" onclick="filterGamesByPlayers()">全て表示</label>
-                <div id="player_results"></div>
-            </div>
-            <div class="hidden" id="time_options">
-                <label><input type="radio" name="times" value="light" onclick="filterGamesByTimees()">軽量級(～30分)</label>
-                <label><input type="radio" name="times" value="medium" onclick="filterGamesByTimees()">中量級(30～60分)</label>
-                <label><input type="radio" name="times" value="heavy" onclick="filterGamesByTimees()">重量級(60分～)</label>
-                <label><input type="radio" name="times" value="all" onclick="filterGamesByTimees()">全て表示</label>
-                <div id="time_results"></div>
-            </div>
-            <div class="hidden" id="level_options">
-                <label><input type="radio" name="levels" value="easy" onclick="filterGamesByLevels()">かんたん</label>
-                <label><input type="radio" name="levels" value="normal" onclick="filterGamesByLevels()">ふつう</label>
-                <label><input type="radio" name="levels" value="difficult" onclick="filterGamesByLevels()">むずかしい</label>
-                <label><input type="radio" name="levels" value="all" onclick="filterGamesByLevels()">全て表示</label>
-                <div id="level_results"></div>
-            </div>
-            <!-- <div class="hidden" id="player_options">
-                <input type="radio" id="1ppl" name="option" value="1ppl" checked/>
-                <label for="1ppl">1人で</label>
-            </div>
-            <div class="hidden">
-                <input type="radio" id="2ppl" name="option" value="2ppl"/>
-                <label for="2ppl">2人で</label>
-            </div>
-            <div class="hidden">
-                <input type="radio" id="3ppl" name="option" value="2ppl"/>
-                <label for="3ppl">3人で</label>
-            </div> -->
-            <div class="options">         
-            </div>
-            <div class="options"></div>
+            <div id="options" class="row mt-4"></div>
+                <!-- ラジオボタン表示 -->
         </section>
-        <section class="section" id="sec4"></section>
+        <section class="section" id="sec4">
+            <div id="gameCards" class="row mt-4">
+                <!-- ボドゲここに表示 -->
+            </div>
+        </section>
     </main>
     <footer></footer>
     <script src="./assets/js/script2.js"></script>

@@ -33,8 +33,14 @@ header a{
 }
 
 /* main */
+@font-face{
+    font-family: gamefont;
+    src: url(../font/PixelMplus-20130602/PixelMplus10-Regular.ttf);
+    font-display: swap;
+}
 body{
     background-image: url("../img/background.jpg");
+    font-family: gamefont;
 }
 
 /* section */
@@ -46,6 +52,7 @@ body{
     font-family: 'Press Start 2P', cursive;
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 
 h2{
@@ -53,19 +60,25 @@ h2{
     color: white;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 /* section2 */
 .btns{
     display: flex;
     justify-content: space-around;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 13px;
+    font-size: 18px;
 }
 
 .btn{
     border: solid 1px black;
-    background-color: pink;
+    background-color: lightyellow;
     width: 110px;
     height: 100px;
+    border-radius: 50% 20%;
 }
 
 /* section3 */
@@ -74,15 +87,23 @@ h2{
     flex-direction: column;
     align-items: center;
 }
-.hidden{
+/* .hidden{
     background-color: whitesmoke;
+    font-size: 18px;
     width: 350px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     padding-left: 50px;
     padding-top: 20px;
-    display: none;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s, visibility 0.3s;
+} */
+.show{
+    visibility: visible;
+    height: auto;
 }
 #player_options{
     height: 150px;

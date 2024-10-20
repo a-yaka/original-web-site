@@ -13,7 +13,7 @@ header{
 }
 
 #menu{
-    height: 30%;
+    height: 40%;
     width: 78%;
     margin-right: 10px;
     display: flex;
@@ -108,84 +108,82 @@ body{
     font-family:  'Press Start 2P', cursive;
 }
 
-.description{
-    padding-top: 5px;
-    padding-left: 10px;
-}
-
 /* section2 */
+#sec2{
+    margin-bottom: 22px;
+}
 #about_boadgame{
     font-family: "gamefont", sans-serif;
     font-size: 30px;
     display: flex;
     justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 22px;
 }
-
 .sec2_container{
     font-family: "gamefont", sans-serif;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
 }
-
-
-
-
-
-
-
-
-
+.sec2_container p{
+    font-size: 20px;
+    margin-top: 20px;
+}
+.sec2_container a{
+    font-size: 24px;
+}
 
 /* section3 */
 .sec3_container{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-#sec3_photo{
-    width: 200px;
-    height: 150px;
 }
 #sec3 p {
     flex: 1;
+    height: 180px;
+    /* 画像変更の必要あり！ */
+    background-image: url(../img/slide.jpg);
+    background-size: 100%;
 }
-
-#link_lists{
+.link_lists{
     display: flex;
     justify-content: end;
+    font-size: larger;
+}
+.link_lists:hover{
+    text-decoration: underline;
+    color: red;
 }
 
-/* section4 */
 
+/* section4 */
+#sec4 p {
+    flex: 1;
+    height: 180px;
+    /* 画像変更の必要あり！ */
+    background-image: url(../img/sample3.jpg);
+    background-size: 100%;
+}
 
 /* section5 */
 .event_items{
     border-top: solid 1px black;
-    margin-top: 7px;
-    margin-bottom: 10px;
+    margin: 7px 0px 10px 10px;
     padding-top: 10px;
-
-    /* div{
-        display: flex;
-        align-items: flex-start;
-    } */
 }
-
-/* .event_link{
-    order: 1;
-    align-self: end;
-} */
 
 .date{
     font-size: 16px;
     margin-bottom: 5px;
 }
 
-.event_name, .event_place{
+.event_link{
     font-size: 18px;
+}
+.event_link:hover{
+    text-decoration: underline;
+    color: red;
 }
 
 
