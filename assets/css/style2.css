@@ -1,3 +1,67 @@
+.container{
+    display: flex;
+    min-height: 100vh;
+}
+
+.left,
+.right{
+    width: 30%; /*左右の幅が25%*/
+    background-size: cover;
+    background-repeat: no-repeat; /*背景繰り返さない*/
+    position: fixed;
+    height: 100vh; /*高さ画面全体に設定*/
+}
+.left{
+    background-image: url("../img/left.jpg");
+    left: 0; /*左側に配置*/
+}
+.right{
+    background-image: url("../img/left.jpg");
+    right: 0; /*右側に配置*/
+}
+.center{
+    width: 40%; /*中央の幅が50%*/
+    margin-bottom: 20px;
+    overflow-y: auto; /*縦方向にスクロールできるようにする*/
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* 以下でスクロールバーを非表示 */
+    /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+    -ms-overflow-style: none;
+    /*Firefoxへの対応*/
+    scrollbar-width: none;
+}
+ /*Google Chrome、Safariへの対応*/
+ .contents_box::-webkit-scrollbar{
+    display: none;
+  }
+
+/* モバイル用 */
+@media screen and (max-width:779px){
+    .container{
+        flex-direction: column;
+    }
+    .left,
+    .right{
+        display: none;
+    }
+    .center{
+        width: 100%;
+        margin: 0;
+    }
+}
+/* PC用 */
+@media screen and (min-width:780px){
+    .container{
+        justify-content: center;
+    }
+    .center{
+        width: 40%;
+    }
+}
+
 /* header */
 header{
     background-color: whitesmoke;
@@ -5,6 +69,11 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed; /*ヘッダーを固定*/
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .fas{
@@ -33,6 +102,10 @@ header a{
 }
 
 /* main */
+main{
+    margin-top: 70px; /*ヘッダーで隠れないように同じ高さ設定*/
+    flex: 1;
+}
 @font-face{
     font-family: gamefont;
     src: url(../font/PixelMplus-20130602/PixelMplus10-Regular.ttf);
@@ -87,19 +160,16 @@ h2{
     align-items: center;
 }
 .form-group{
-    background-color: whitesmoke;
+    background-color: lightcyan;
     font-size: 18px;
-    width: 350px;
+    width: 300px;
+    border-radius: 10%;
     /* display: flex;
     flex-direction: column;
     flex-wrap: wrap; */
     padding-left: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /* visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s, visibility 0.3s; */
 }
 
 label {
@@ -113,3 +183,39 @@ input[type="radio"] {
 
 
 /* section4 */
+#sec4{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-title{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    /* background-color: aquamarine; */
+}
+#gameCards{
+    width: 380px;
+}
+.card-img{
+    width: 300px;
+    height: 280px;
+}
+
+/* footer */
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
