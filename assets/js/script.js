@@ -1,7 +1,7 @@
 //ローディング
 window.onload = function() {
     // ローディングが終了したらローダーを非表示にしてメインコンテンツを表示
-    document.querySelector('.loader').style.display = 'none';
+    document.querySelector('#page-loading').style.display = 'none';
     document.querySelector('.main-content').style.display = 'block';
 };
 
@@ -39,17 +39,57 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 //header
+//nav bar
+$(document).ready(function() {
+    let currentItem = $("#home");
+    $("#"+currentItem.attr("id")).css("color", "white"); //初期設定 現在の項目:HOME 文字色:白
+
+    //メニュー項目にホバーしたときの処理
+    $("#nav li").hover(
+        function() { 
+            const itemId = $(this).attr("id");//現在ホバーしている項目のID取得
+
+            //ホバーしてる項目が現在の項目じゃない場合
+            if (itemId !== currentItem.attr("id")) { 
+                $(this).find("a").css("color", "white"); //ホバーしている項目の文字色:白
+                $("#"+currentItem.attr("id")).css("color", "black"); //HOMEの文字色:黒
+            } else {
+                $(this).find("a").css("color", "white"); // HOMEにホバー時は白色
+            }
+            $("#slide_color").css({
+                "width": $(this).width(),
+                "left": $(this).position().left
+            });
+        },
+        function() {
+            const itemId = $(this).attr("id");
+            //ホバーが外れたら文字色を戻す
+            if (itemId !== currentItem.attr("id")) {
+                $(this).find("a").css("color", "black");
+            }
+        }
+    );
+
+    // マウスがnavから離れたとき
+    $("#nav").mouseleave(function() {
+        $("#"+currentItem.attr("id")).css("color", "white");
+        //背景色をHOMEの位置に戻す
+        $("#slide_color").css({
+            "width": currentItem.width(),
+            "left": currentItem.position().left
+        });
+    });
+});
 
 
 //section6
 const scrollContainer = document.querySelector(".scroll_movies");
 
-  scrollContainer.addEventListener('wheel', (event) => {
-        event.preventDefault();
-        scrollContainer.scrollleft += event.deltaY; // スクロール位置を調整
-  });
 
-//left
+//main
+
+
+//Left
 const bird = document.querySelector(".bird");
 bird.animate(
     [{transform:"translateX(0)"},
@@ -62,26 +102,12 @@ bird.animate(
     },
 );
 
-
-//↓斜めに動かす方法
-// bird.addEventListener("mouseover",function(){
-// bird.animate(
-//     [{transform:"translate(0px)"},
-//      {transform:"translate(-300px,300px)"}
-//     ],
-//     //タイミングの設定
-//     {fill: "backwards", //再生前後の状態
-//      duration: 3000, //再生時間
-//     },);
-// });
-
-
-//right
+//Right
 const frog = document.querySelector(".frog");
 frog.addEventListener("mouseover",function(){
     frog.animate( 
         [{transform:"translate(0,0)"},
-        {transform:"translateY(-120px)"},  //画像を左から右に120px動かす
+        {transform:"translateY(-120px)"},  //画像上に120px動かす
        {transform:"tranlate(0,0)"}],
         {fill: "backwards", duration: 1000},
         );

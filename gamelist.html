@@ -14,15 +14,16 @@
 <body>
     <header>
         <a class="fas fa-dice fa-3x" href="./index.html"></a>
+            <nav id="nav">
             <ul id="menu">
                 <li>
-                    <a class="menu"id="now" href="./index.html">HOME</a>
+                    <a class="menu"id="home" href="./index.html">HOME</a>
                 </li>
                 <li>
                     <a class="menu"id="list" href="./gamelist.html">LIST</a>
                 </li>
                 <li>
-                    <a class="menu"id="cafe" href="./cafe.html">CAFE&BAR</a>
+                    <a class="menu"id="cafe" href="./cafe.html">CAFE</a>
                 </li>
                 <li>
                     <a class="menu"id="event" href="./index.html#sec5">EVENT</a>
@@ -31,10 +32,15 @@
                     <a class="menu"id="movie" href="./index.html#sec6">MOVIE</a>
                 </li>
             </ul>
+            <span id="slide_color"></span>
+            </nav>
     </header>
     <div class="container">
         <div class="left">
-            <div id="left"><img class="cat"src="./assets/img/cat.png" alt=""></div>
+            <div id="left">
+                <img class="cat"src="./assets/img/cat.png" alt="">
+                <img class="star"src="./assets/img/star.png" alt="">
+            </div>
         </div>
         <div class="center">
     <main>
@@ -60,18 +66,21 @@
             </div>
         </section>
         <div id="btn">
-            <button onclick="location.href='./gamelist.html'"class="Btn">
+            <a href="#sec1" class="Btn">
              <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
              <p class="text">Back to Top</p>
-            </button>
+            </a>
         </div>
     </main>
     </div>
-    <div class="right"></div>
+    <div class="right">
+        <img class="ghost"src="./assets/img/ghost.png" alt="">
+    </div>
     </div>
     <footer>
         <p>&copy; 2024 ボドゲの世界|Yaka</p>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/script2.js"></script>
 </body>
 </html>

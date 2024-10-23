@@ -83,24 +83,49 @@ header{
     margin-bottom: 5px;
 }
 
-#menu{
-    height: 30%;
+/* ↓メニューバー */
+#nav{
+    height: 80%;
     width: 78%;
+    position: relative;
+    align-content: center;
     margin-right: 10px;
+}
+#menu{
+    height: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     border-radius: 100px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 9px 0px 5px;
+    z-index: 2;
 }
-
-ul{
-    list-style: none;
+.menu{
+    position: relative;
+    z-index: 3;
 }
-
-header a{
-    text-decoration: none;
+#slide_color{
+    position: absolute;
+    bottom: 17%;
+    height: 69%;
+    padding: 0px 30px 0px 30px;
+    background-color: #0E3D4ACC;
+    border-radius: 20px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    z-index: 1;
+}
+/* モバイル用 */
+@media screen and (max-width:779px){
+    .menu{
+        padding: 7px 14px 5px;
+    }
+}
+/* PC用 */
+@media screen and (min-width:780px){
+    .menu{
+        padding: 7px 20px 5px;
+    }
 }
 
 /* main */
@@ -313,6 +338,23 @@ input[type="radio"] {
     position: fixed;
     bottom: 65px;
     left: 10%;
+    height: 70px;
+}
+.star{
+    position: fixed;
+    top: 190px;
+    left: 20%;
+    height: 80px;
+}
+
+/* right */
+#right{
+    position: absolute;
+}
+.ghost{
+    position: fixed;
+    top: 290px;
+    right: 5%;
     height: 70px;
 }
 

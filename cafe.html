@@ -12,15 +12,16 @@
 <body>
     <header>
         <a class="fas fa-dice fa-3x" href="./index.html"></a>
+        <nav id="nav">
         <ul id="menu">
             <li>
-                <a class="menu"id="now" href="./index.html">HOME</a>
+                <a class="menu"id="home" href="./index.html">HOME</a>
             </li>
             <li>
                 <a class="menu"id="list" href="./gamelist.html">LIST</a>
             </li>
             <li>
-                <a class="menu"id="cafe" href="./cafe.html">CAFE&BAR</a>
+                <a class="menu"id="cafe" href="./cafe.html">CAFE</a>
             </li>
             <li>
                 <a class="menu"id="event" href="./index.html#sec5">EVENT</a>
@@ -29,9 +30,11 @@
                 <a class="menu"id="movie" href="./index.html#sec6">MOVIE</a>
             </li>
         </ul>
+        <span id="slide_color"></span>
+        </nav>
     </header>
     <div class="container">
-        <div class="left"></div>
+        <div class="Left"></div>
         <div class="center">
     <main>
         <section class="section" id="sec1">
@@ -53,25 +56,26 @@
             <div class="container" id="container2">
                 <h2 class="shopname">ゆこる</h2>
                 <p id="address">北海道札幌市中央区南1条西5丁目16</p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.1674058494605!2d141.34728227596938!3d43.05894657113652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29453f56a9cd%3A0x86ca5675506baa19!2z44GL44GP44KM44GM44Ky44O844Og44Kr44OV44KnIOOChuOBk-OCiw!5e0!3m2!1sja!2sph!4v1729336976387!5m2!1sja!2sph" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.1674058494605!2d141.34728227596938!3d43.05894657113652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b29453f56a9cd%3A0x86ca5675506baa19!2z44GL44GP44KM44GM44Ky44O844Og44Kr44OV44KnIOOChuOBk-OCiw!5e0!3m2!1sja!2sph!4v1729336976387!5m2!1sja!2sph" width="270" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <!-- <img src="./assets/img/sample2.jpg" alt=""> -->
                 <p id="how_many">▶遊べるボドゲ1,165種類◀</p>
                 <p id="description">「ゆっくり こっそり 遊べるお店」<br>ボードゲーム、謎解き、人狼、TRPG 誰かと遊びたい人が集う場所 もちろん一人でも、友達同士でも、恋人同士でも。 気が向いた時に、同じ趣味の仲間と、楽しい時間を</p>
             </div>
         </section>
         <div id="btn">
-            <button onclick="location.href='./cafe.html'"class="Btn">
+            <a href="#sec1" class="Btn">
              <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
              <p class="text">Back to Top</p>
-            </button>
+            </a>
         </div>
     </main>
     </div>
-    <div class="right"></div>
+    <div class="Right"></div>
     </div>
     <footer>
         <p>&copy; 2024 ボドゲの世界|Yaka</p>
     </footer>
-    <script src="./assets/js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/js/script3.js"></script>
 </body>
 </html>

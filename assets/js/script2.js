@@ -1,3 +1,47 @@
+//header
+//nav bar
+$(document).ready(function() {
+    let currentItem = $("#list");
+    $("#"+currentItem.attr("id")).css("color", "white"); //初期設定 現在の項目:HOME 文字色:白
+
+    //メニュー項目にホバーしたときの処理
+    $("#nav li").hover(
+        function() { 
+            const itemId = $(this).attr("id");//現在ホバーしている項目のID取得
+
+            //ホバーしてる項目が現在の項目じゃない場合
+            if (itemId !== currentItem.attr("id")) { 
+                $(this).find("a").css("color", "white"); //ホバーしている項目の文字色:白
+                $("#"+currentItem.attr("id")).css("color", "black"); //HOMEの文字色:黒
+            } else {
+                $(this).find("a").css("color", "white"); // HOMEにホバー時は白色
+            }
+            $("#slide_color").css({
+                "width": $(this).width(),
+                "left": $(this).position().left
+            });
+        },
+        function() {
+            const itemId = $(this).attr("id");
+            //ホバーが外れたら文字色を戻す
+            if (itemId !== currentItem.attr("id")) {
+                $(this).find("a").css("color", "black");
+            }
+        }
+    );
+
+    // マウスがnavから離れたとき
+    $("#nav").mouseleave(function() {
+        $("#"+currentItem.attr("id")).css("color", "white");
+        //背景色をHOMEの位置に戻す
+        $("#slide_color").css({
+            "width": currentItem.width(),
+            "left": currentItem.position().left
+        });
+    });
+});
+
+//main
 const games = [
     {
         name:"宝石の煌めき:Splendor",
@@ -274,7 +318,9 @@ const renderGames = (filterdGames) => {
     });
 };
 
-//right
+
+
+//left
 const cat = document.querySelector(".cat");
 cat.addEventListener("mouseover",function(){
     cat.animate( 
@@ -298,3 +344,35 @@ cat.addEventListener("mouseover",function(){
     };
 };
 });
+
+//Left
+const star = document.querySelector('.star'); 
+star.addEventListener("mouseover",function(){
+star.animate(
+    [{transform:"translate(0px)"},
+     {transform:"translate(-400px,300px)"}
+    ],
+    //タイミングの設定
+    {fill: "forwards", //再生前後の状態
+     duration: 2000, //再生時間
+    },);
+});
+
+
+//right
+const ghost = document.querySelector(".ghost");
+function animateRight() {
+ghost.animate(
+    [{transform:"translateX(0)"},
+     {transform:"translateX(-220px)"}],
+    {fill: "forwards",duration: 6000,//iterations: Infinity, //アニメーションの繰り返し回数(ずっと)
+    }).onfinish = animateLeft;}
+
+    function animateLeft(){
+        ghost.animate(
+            [{transform:"translate(-220px)"},
+                {transform:"translate(0)"}],
+                {fill:"forwards", duration:6000}
+        ).onfinish = animateRight;
+    }
+    animateRight();
