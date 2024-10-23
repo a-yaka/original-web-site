@@ -13,10 +13,12 @@
 }
 .left{
     background-image: url("../img/left.jpg");
+    opacity: 0.5;
     left: 0; /*左側に配置*/
 }
 .right{
     background-image: url("../img/left.jpg");
+    opacity: 0.5;
     right: 0; /*右側に配置*/
 }
 .center{
@@ -127,7 +129,6 @@ body{
     justify-content: center;
     margin-top: 15px;
 }
-
 h2{
     font-size: 25px;
     color: white;
@@ -141,18 +142,55 @@ h2{
     display: flex;
     justify-content: space-around;
     text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 20px;
 }
 
 .btn{
-    border: solid 1px black;
-    background-color: lightyellow;
-    width: 110px;
+    color: white;
+    width: 120px;
     height: 100px;
-    border-radius: 50% 20%;
+    border-radius: 20%;
 }
 
+/* From Uiverse.io by nikk7007 */ 
+.btn {
+    border: 3px solid #FFED64;
+    position: relative;
+    overflow: hidden;
+    background-color: #eef1b8;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: .3s;
+    z-index: 1;
+    color: black;
+   }
+   
+   .btn::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #FFED64;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   .btn:hover::before {
+    width: 125%;
+   }
+   
+   .btn:hover {
+    color: #111;
+   }
+   
+
+
+  
 /* section3 */
 #sec3{
     display: flex;
@@ -160,13 +198,11 @@ h2{
     align-items: center;
 }
 .form-group{
-    background-color: lightcyan;
+    border: 2px solid black;
+    background-color: #eef1b8;
     font-size: 18px;
     width: 300px;
     border-radius: 10%;
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; */
     padding-left: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -187,10 +223,15 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
 }
+#gameCards{
+    display: flex;
+    flex-direction: column;
+}
 .card{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 350px;
 }
 .card-title{
     margin-top: 10px;
@@ -198,13 +239,84 @@ input[type="radio"] {
     font-weight: bold;
     /* background-color: aquamarine; */
 }
-#gameCards{
-    width: 380px;
-}
 .card-img{
-    width: 300px;
-    height: 280px;
+    width: 80%;
+    height: 70%;
 }
+
+/* From Uiverse.io by vinodjangid07 */ 
+#btn{
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+}
+/* PC用*/
+@media screen and (min-width:780px){
+    #btn{
+        right: 33%;
+    }
+}
+.Btn {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(#828ed6, #39fad789);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    border: none;
+  }
+  .arrow path {
+    fill: white;
+  }
+  .text {
+    font-size: 0.7em;
+    width: 100px;
+    position: absolute;
+    color: #ab4ead;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -18px;
+    opacity: 0;
+    transition-duration: .7s;
+  }
+  .Btn:hover .text {
+    opacity: 1;
+    transition-duration: .7s;
+  }
+  .Btn:hover .arrow {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+
+  /* left */
+#left{
+    position: absolute;
+}
+.cat{
+    position: fixed;
+    bottom: 65px;
+    left: 10%;
+    height: 70px;
+}
+
+
 
 /* footer */
 footer{
@@ -213,9 +325,5 @@ footer{
     background-color: whitesmoke;
     padding-top: 5px;
     padding-bottom: 5px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
-    z-index: 1000;
 }

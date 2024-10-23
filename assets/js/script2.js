@@ -223,6 +223,11 @@ const showOptions = (criteria) => {
     options.innerHTML = html;
  };
 
+//初期表示
+window.onload = () => {
+    renderGames(games);
+}
+
 //人数で検索
  const filterGames = (playerCount) => {
     const filteredGames = games.filter(game =>
@@ -253,7 +258,7 @@ const renderGames = (filterdGames) => {
     gameCards.innerHTML = ""; //既存のカードをクリア
     filterdGames.forEach((game) => {
         const card = document.createElement("div");
-        card.classList.add("col-md-4","mb-4");
+        card.classList.add("col-md-4","mb-4"); //↓検索に当てはまるカード表示
         card.innerHTML = `
         <div class="card">
           <h5 class="card-title">${game.name}</h5>
@@ -268,3 +273,28 @@ const renderGames = (filterdGames) => {
         gameCards.appendChild(card);
     });
 };
+
+//right
+const cat = document.querySelector(".cat");
+cat.addEventListener("mouseover",function(){
+    cat.animate( 
+        [{transform:"translateY(0)"},
+        {transform:"translateY(-120px)"},  //画像を左から右に120px動かす
+       {transform:"translate(0)"}],
+        {fill: "backwards", duration: 350} //backwardsで最初の位置に戻る、forwardsで最後の位置
+        ).onfinish = function(){
+            cat.animate(
+                [{transform:"translate(0)"},
+                {transform:"translate(-300px)"}],
+                {fill:"forwards", duration:500}
+    ).onfinish = function() { //終わったあとに動きを追加
+        setTimeout(() => {
+            cat.animate(
+                [{transform:"translate(220px,0px)"},  //transform:translate(X軸の距離,Y軸の距離)
+                 {transform:"translateX(0)"}],
+                 {fill:"forwards", duration:4000}
+            );
+        }, 5000); //3000遅らせてアニメーションスタート
+    };
+};
+});

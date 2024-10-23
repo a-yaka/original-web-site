@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ボドゲの世界</title>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/uiverse@latest/dist/uiverse.min.css">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+  <!-- From Uiverse.io by mobinkakei -->
+<!-- <span class="loader"></span> -->
+<!-- <div class="main-content" style="display: none;"> -->
           <header>
-            <i class="fas fa-dice fa-3x" class="home"></i>
+            <a class="fas fa-dice fa-3x" class="home" href="./index.html"></a>
             <ul id="menu">
               <li>
-                <a id="now" href="#home">HOME</a>
+                <a class="menu"id="home" href="#home">HOME</a>
               </li>
               <li>
-                <a id="list" href="./gamelist.html">LIST</a>
+                <a class="menu"id="list" href="./gamelist.html">LIST</a>
               </li>
               <li>
-                <a id="cafe" href="./cafe.html">CAFE&BAR</a>
+                <a class="menu"id="cafe" href="./cafe.html">CAFE&BAR</a>
               </li>
               <li>
-                <a id="event" href="#sec5">EVENT</a>
+                <a class="menu"id="event" href="#sec5">EVENT</a>
               </li>
               <li>
-                <a id="movie" href="#sec6">MOVIE</a>
+                <a class="menu"id="movie" href="#sec6">MOVIE</a>
               </li>
             </ul>
+            <!-- <span id="slide_color"></span> -->
           </header>
           <div class="container">
-            <div class="left"></div>
+            <div class="left">
+              <div id="left"><img class="bird"src="./assets/img/bird.png" alt=""></div>
+            </div>
             <div class="center">
           <main>
             <section class="slide" id="sec1">
@@ -46,7 +53,7 @@
               </ul>
             </section>
         
-            <section class="section" id="sec2">
+            <section id="sec2">
                <h2 id="about_boadgame">ボドゲの世界へようこそ</h2>
                <div class="sec2_container">
                  <p>ボードゲーム、通称ボドゲはここ数年で<br>人気が高まっており、たくさんの人が<br>その魅力の虜になっています。</p>
@@ -120,14 +127,25 @@
                     </div>
                 </div>
              </section>
+             <div class="btn">
+             <button onclick="location.href='./index.html'"class="Btn">
+              <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+              <p class="text">Back to Top</p>
+             </button>
+             </div>
            </main>
           
         </div>
-        <div class="right"></div>
+        <div class="right">
+          <div id="right"><img class="frog"src="./assets/img/frog.png" alt=""></div>
+        </div>
     </div>
     <footer>
       <p>&copy; 2024 ボドゲの世界|Yaka</p>
     </footer>
     <script src="./assets/js/script.js"></script>
+    <script src="https://unpkg.com/uiverse@latest/dist/uiverse.min.js"></script>
+
+    </div>
 </body>
 </html>

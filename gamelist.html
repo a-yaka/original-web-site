@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BoardGame List</title>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -13,31 +13,33 @@
 </head>
 <body>
     <header>
-        <i class="fas fa-dice fa-3x"></i>
+        <a class="fas fa-dice fa-3x" href="./index.html"></a>
             <ul id="menu">
                 <li>
-                    <a id="now" href="./index.html">HOME</a>
+                    <a class="menu"id="now" href="./index.html">HOME</a>
                 </li>
                 <li>
-                    <a id="list" href="./gamelist.html">LIST</a>
+                    <a class="menu"id="list" href="./gamelist.html">LIST</a>
                 </li>
                 <li>
-                    <a id="cafe" href="./cafe.html">CAFE&BAR</a>
+                    <a class="menu"id="cafe" href="./cafe.html">CAFE&BAR</a>
                 </li>
                 <li>
-                    <a id="event" href="./index.html#sec5">EVENT</a>
+                    <a class="menu"id="event" href="./index.html#sec5">EVENT</a>
                 </li>
                 <li>
-                    <a id="movie" href="./index.html#sec6">MOVIE</a>
+                    <a class="menu"id="movie" href="./index.html#sec6">MOVIE</a>
                 </li>
             </ul>
     </header>
     <div class="container">
-        <div class="left"></div>
+        <div class="left">
+            <div id="left"><img class="cat"src="./assets/img/cat.png" alt=""></div>
+        </div>
         <div class="center">
     <main>
         <section class="section" id="sec1">
-            <h1 class="subtitle">BOARD GAME LIST</h1>
+            <h1 class="subtitle">BOARDGAME LIST</h1>
             <h2>あなたにぴったりの</h2>
             <h2>ボドゲを見つけよう！</h2>
         </section>
@@ -57,6 +59,12 @@
                 <!-- ボドゲここに表示 -->
             </div>
         </section>
+        <div id="btn">
+            <button onclick="location.href='./gamelist.html'"class="Btn">
+             <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+             <p class="text">Back to Top</p>
+            </button>
+        </div>
     </main>
     </div>
     <div class="right"></div>
