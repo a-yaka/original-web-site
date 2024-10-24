@@ -1,3 +1,147 @@
+/* ローディング */
+#page-loading {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/background.jpg") ;
+}
+
+/* From Uiverse.io by mobinkakei */ 
+.loader {
+    width: 54px;
+    height: 54px;
+    position: relative;
+    border-radius: 4px;
+    border-color: 2px solid black;
+    background-color: #fff;
+    background-image: radial-gradient(circle 5px, #19191a 100%, transparent 0),
+      radial-gradient(circle 5px, #19191a 100%, transparent 0),
+      radial-gradient(circle 5px, #19191a 100%, transparent 0),
+      radial-gradient(circle 5px, #19191a 100%, transparent 0),
+      radial-gradient(circle 5px, #19191a 100%, transparent 0),
+      radial-gradient(circle 5px, #19191a 100%, transparent 0);
+    background-repeat: no-repeat;
+    animation: move 4s linear infinite, rotate 2s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0%,
+    20% {
+      transform: rotate(0deg);
+    }
+    30%,
+    40% {
+      transform: rotate(90deg);
+    }
+    50%,
+    60% {
+      transform: rotate(180deg);
+    }
+    70%,
+    80% {
+      transform: rotate(270deg);
+    }
+    90%,
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes move {
+    0%,
+    9% {
+      background-position: -12px -15px, -12px 0px, -12px 15px, 12px -15px,
+        12px 0px, 12px 15px;
+    }
+    10%,
+    25% {
+      background-position: 0px -15px, -12px 0px, -12px 15px, 34px -15px, 12px 0px,
+        12px 15px;
+    }
+    30%,
+    45% {
+      background-position: 0px -34px, -12px -10px, -12px 12px, 34px -15px,
+        12px -10px, 12px 12px;
+    }
+    50%,
+    65% {
+      background-position: 0px -34px, -12px -34px, -12px 12px, 34px -12px,
+        0px -10px, 12px 12px;
+    }
+    70%,
+    85% {
+      background-position: 0px -34px, -12px -34px, 0px 12px, 34px -12px, 0px -10px,
+        34px 12px;
+    }
+    90%,
+    100% {
+      background-position: 0px -34px, -12px -34px, 0px 0px, 34px -12px, 0px 0px,
+        34px 12px;
+    }
+  }
+
+/* From Uiverse.io by gagan-gv */ 
+.spinner {
+    height: 50px;
+    width: max-content;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: monospace;
+    letter-spacing: 1em;
+    color: #f5f5f5;
+    filter: drop-shadow(0 0 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 15px;
+   }
+   
+   .spinner span {
+    animation: loading6454 1.75s ease infinite;
+   }
+   
+   .spinner span:nth-child(2) {
+    animation-delay: 0.25s;
+   }
+   
+   .spinner span:nth-child(3) {
+    animation-delay: 0.5s;
+   }
+   
+   .spinner span:nth-child(4) {
+    animation-delay: 0.75s;
+   }
+   
+   .spinner span:nth-child(5) {
+    animation-delay: 1s;
+   }
+   
+   .spinner span:nth-child(6) {
+    animation-delay: 1.25s;
+   }
+   
+   .spinner span:nth-child(7) {
+    animation-delay: 1.5s;
+   }
+   
+   @keyframes loading6454 {
+    0%, 100% {
+     transform: translateY(0);
+    }
+   
+    50% {
+     transform: translateY(-10px);
+    }
+   }
+  
+
+.container{
+    display: flex;
+}
+
 .Left,
 .Right{
     width: 30%; /*左右の幅が25%*/
@@ -175,6 +319,10 @@ h2{
 .shopname{
     font-size: 25px;
     text-decoration: underline;
+    padding-bottom: 5px;
+}
+.shopname:hover{
+    color: red;
 }
 #address{
     padding-bottom: 5px;
@@ -190,11 +338,12 @@ h2{
 #description{
     padding-top: 10px;
 }
-#container1{
-    background-color: aquamarine;
+#container1,
+#container3{
+    background-color: rgb(164, 247, 219);
 }
 #container2{
-    background-color: lightcoral;
+    background-color: rgb(249, 172, 172);
 }
 
 /* From Uiverse.io by vinodjangid07 */ 

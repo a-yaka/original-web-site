@@ -1,4 +1,10 @@
  
+//ローディング
+window.onload = function() {
+    // ローディングが終了したらローダーを非表示にしてメインコンテンツを表示
+    document.querySelector('#page-loading').style.display = 'none';
+    document.querySelector('.main-content').style.display = 'block';
+};
 //header
 //nav bar
 $(document).ready(function() {

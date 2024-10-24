@@ -1,9 +1,18 @@
+//ローディング
+document.addEventListener("DOMContentLoaded", function() {
+    // 3秒間ローディング画面表示
+    setTimeout(function() {
+      document.querySelector('#page-loading').style.display = 'none';
+      document.querySelector('.main-content').style.display = 'block';
+    }, 3000);
+});
+
 //header
 //nav bar
 $(document).ready(function() {
     let currentItem = $("#list");
-    $("#"+currentItem.attr("id")).css("color", "white"); //初期設定 現在の項目:HOME 文字色:白
-
+    $("#"+ currentItem.attr("id")).css("color", "white"); //初期設定 現在の項目:LIST 文字色:白
+    
     //メニュー項目にホバーしたときの処理
     $("#nav li").hover(
         function() { 
@@ -234,13 +243,18 @@ const games = [
     }
 ];
 
+//初期表示 全てのボドゲ表示
+window.onload = () => {
+    renderGames(games);
+}
+
 //各ボタンを押してラジオボタン表示
 const showOptions = (criteria) => {
     const options = document.getElementById("options");
     options.innerHTML = ""; //既存の選択肢をクリア
 
     let html = '<div class="form-group">';
-    if(criteria === 'player'){
+    if(criteria === 'player'){  //"人数で"のボタンを押した際に表示する選択肢
         html += `
         <input type ="radio" name="players" value="1" onclick="filterGames(1)">1人用<br>
         <input type ="radio" name="players" value="2" onclick="filterGames(2)">2人用<br>
@@ -249,14 +263,14 @@ const showOptions = (criteria) => {
         <input type ="radio" name="players" value="5" onclick="filterGames(5)">5人用<br>
         <input type ="radio" name="players" value="all" onclick="filterGames('all')">全て表示<br>
         `;
-    } else if(criteria === 'time'){
+    } else if(criteria === 'time'){  // "プレイ時間で"のボタンを押した際に表示する選択肢
         html += `
         <input type ="radio" name="time" value="light" onclick="filterGamesByTime('軽量級(～30分)')">軽量級(～30分)<br>
         <input type ="radio" name="time" value="medium" onclick="filterGamesByTime('中量級(30～60分)')">中量級(30～60分)<br>
         <input type ="radio" name="time" value="heavy" onclick="filterGamesByTime('重量級(60分～)')">重量級(60分～)<br>
         <input type ="radio" name="time" value="all" onclick="filterGamesByTime('all')">全て表示<br>
         `;
-    } else if(criteria === 'level'){
+    } else if(criteria === 'level'){  //"難易度で"のボタンを押した際に表示する選択肢
         html += `
         <input type ="radio" name="level" value="easy" onclick="filterGamesByLevel('かんたん★☆☆')">かんたん★☆☆<br>
         <input type ="radio" name="level" value="normal" onclick="filterGamesByLevel('ふつう★★☆')">ふつう★★☆<br>
@@ -267,16 +281,12 @@ const showOptions = (criteria) => {
     options.innerHTML = html;
  };
 
-//初期表示
-window.onload = () => {
-    renderGames(games);
-}
+
 
 //人数で検索
  const filterGames = (playerCount) => {
     const filteredGames = games.filter(game =>
-        playerCount === 'all' ? true:
-        game.players.includes(playerCount)
+        playerCount === 'all' ? true: game.players.includes(playerCount)
     );
     renderGames(filteredGames);
  };
@@ -345,7 +355,7 @@ cat.addEventListener("mouseover",function(){
 };
 });
 
-//Left
+
 const star = document.querySelector('.star'); 
 star.addEventListener("mouseover",function(){
 star.animate(
@@ -362,17 +372,18 @@ star.animate(
 //right
 const ghost = document.querySelector(".ghost");
 function animateRight() {
-ghost.animate(
-    [{transform:"translateX(0)"},
-     {transform:"translateX(-220px)"}],
-    {fill: "forwards",duration: 6000,//iterations: Infinity, //アニメーションの繰り返し回数(ずっと)
-    }).onfinish = animateLeft;}
+    ghost.animate(
+        [{ transform: "translateX(0) scaleX(1)" },  // 画像を元に戻す
+         { transform: "translateX(-230px) scaleX(1)" }
+        ],{ fill: "forwards", duration: 6000}
+    ).onfinish = animateLeft;
+}
+function animateLeft() {
+    ghost.animate(
+        [{ transform: "translateX(-230px) scaleX(-1)" }, // 画像を反転
+         { transform: "translateX(0) scaleX(-1)" }
+        ],{ fill: "forwards", duration: 6000}
+    ).onfinish = animateRight;
+}
 
-    function animateLeft(){
-        ghost.animate(
-            [{transform:"translate(-220px)"},
-                {transform:"translate(0)"}],
-                {fill:"forwards", duration:6000}
-        ).onfinish = animateRight;
-    }
-    animateRight();
+animateRight();
